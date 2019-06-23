@@ -1,5 +1,7 @@
-package com.cnlbogs.yjmyzz.pulsarsample;
+package com.cnlbogs.yjmyzz.pulsarsample.producer;
 
+import com.cnlbogs.yjmyzz.pulsarsample.config.PulsarConfiguration;
+import com.cnlbogs.yjmyzz.pulsarsample.model.Product;
 import org.apache.pulsar.client.api.MessageId;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClient;
@@ -11,6 +13,9 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author jimmy
+ */
 @Component
 public class SampleProducer implements InitializingBean {
 
@@ -32,7 +37,7 @@ public class SampleProducer implements InitializingBean {
     public void afterPropertiesSet() {
         try {
             producer = client.newProducer(JSONSchema.of(Product.class))
-                    .topic("product-info")
+                    .topic(PulsarConfiguration.TOPIC_NAME)
                     .create();
         } catch (PulsarClientException e) {
             logger.error("SampleProducer init error!", e);

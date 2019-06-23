@@ -1,5 +1,7 @@
 package com.cnlbogs.yjmyzz.pulsarsample;
 
+import com.cnlbogs.yjmyzz.pulsarsample.model.Product;
+import com.cnlbogs.yjmyzz.pulsarsample.producer.SampleProducer;
 import org.apache.pulsar.client.api.PulsarClientException;
 import org.junit.Test;
 import org.junit.runner.RunWith;

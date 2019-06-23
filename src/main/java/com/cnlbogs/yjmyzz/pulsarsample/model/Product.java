@@ -1,13 +1,15 @@
-package com.cnlbogs.yjmyzz.pulsarsample;
+package com.cnlbogs.yjmyzz.pulsarsample.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author jimmy
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
